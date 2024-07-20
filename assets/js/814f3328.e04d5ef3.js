@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmikespiegel=self.webpackChunkmikespiegel||[]).push([[472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Conway\'s game of life","permalink":"/mikespiegel/2019/08/29/conways-game-of-life","unlisted":false}]}')}}]);

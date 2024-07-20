@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://mspiegel31.github.io/mikespiegel/</id>
+    <title>Mike Spiegel Blog</title>
+    <updated>2019-08-29T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://mspiegel31.github.io/mikespiegel/"/>
+    <subtitle>Mike Spiegel Blog</subtitle>
+    <icon>https://mspiegel31.github.io/mikespiegel/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Conway's game of life]]></title>
+        <id>https://mspiegel31.github.io/mikespiegel/2019/08/29/conways-game-of-life</id>
+        <link href="https://mspiegel31.github.io/mikespiegel/2019/08/29/conways-game-of-life"/>
+        <updated>2019-08-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A couple weekends ago, I decided to write an implementation of Conway's Game of Life.  This wasn't some kind of triumphant, "oh I'm so awesome at programming and I just want to tackle a puzzle" experience for me.  CoGL actually has a sort of special place in my heart as a big, scary Programming Interview Problem ™️.]]></summary>
+        <content type="html"><![CDATA[<p>A couple weekends ago, I decided to write an implementation of <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" target="_blank" rel="noopener noreferrer">Conway's Game of Life</a>.  This wasn't some kind of triumphant, "oh I'm so awesome at programming and I just want to tackle a puzzle" experience for me.  CoGL actually has a sort of special place in my heart as a big, scary Programming Interview Problem ™️.</p>
+<p>The last time I tried to attempted to implement CoGL was (you guessed it) an interview situation.  I (mistakenly) decided to show up with minimal prep, and unsurprisingly, I did not perform as well as I should have.  I never revisited the problem, and it became a sort of "programmers <a href="https://en.wikipedia.org/wiki/Yips" target="_blank" rel="noopener noreferrer">yips</a>" situation for me.</p>
+<p>I spent almost a year mentally berating myself.  Every time I would be proud of something I did at work, or excited about a job posting, the memory of bombing would resurface and ruin the positivity of the moment.  I don't know why, but for some reason this month I got tired of that cycle.  I sat down on a random Wednesday, had an extra-strong cup of coffee, and didn't stop until I had the problem sketched out.  It took about an hour and a half.</p>
+<p>Now, that's longer than the length of an interview. I'm still pretty happy with the result.  More than the result, though, I'm really happy to have reclaimed a little bit of self confidence.</p>
+<p>Don't let your inner demons keep you from getting back on that horse.  All the time you spend doubting yourself is wasted energy.  I guarantee the effort of trying again is much less painful than feeling sorry for yourself.</p>
+<p>Here's a demo:
+<img decoding="async" loading="lazy" alt="conway-demo" src="https://mspiegel31.github.io/mikespiegel/assets/images/conway_small-8b52189cde6d262ffb88809317a9ca0e.gif" width="1338" height="1240" class="img_ev3q"></p>
+<p>you can find the sourcecode <a href="https://github.com/mspiegel31/conways_game_of_life" target="_blank" rel="noopener noreferrer">on github</a>.</p>]]></content>
+        <author>
+            <name>Mike Spiegel</name>
+            <uri>https://github.com/mspiegel31</uri>
+        </author>
+    </entry>
+</feed>

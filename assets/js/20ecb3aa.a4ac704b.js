@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmikespiegel=self.webpackChunkmikespiegel||[]).push([[9150],{6913:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/mikespiegel/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
