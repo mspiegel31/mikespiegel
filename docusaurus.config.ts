@@ -40,7 +40,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/mspiegel31/mikespiegel/edit/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -59,25 +59,30 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
+        {
+          href: 'https://www.linkedin.com/in/mike-spiegel-a77b7937/',
+          label: 'LinkedIn',
+          position: 'left',
+        },
+        {
+          href: 'https://www.github.com/mspiegel31',
+          label: 'Github',
+          position: 'left',
+        },
+        {
+          to: '/',
+          label: 'Blog',
+          position: 'left',
+        },
+        {
+          to: '/now',
+          label: 'Now',
+          position: 'left',
+        }
       ],
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/mspiegel31',
-            },
-          ],
-        },
-      ],
       copyright: `Copyright © ${new Date().getFullYear()} Mike Spiegel, Inc. Built with Docusaurus.`,
     },
     prism: {
