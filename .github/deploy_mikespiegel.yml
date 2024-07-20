@@ -1,0 +1,72 @@
+name: Deploy mikespiegel
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  deploy-mikespiegel-and-storybook:
+    permissions:
+      contents: write # for JamesIves/github-pages-deploy-action to push changes in repo
+    runs-on: ubuntu-latest
+
+    env:
+      CI: true
+      NODE_OPTIONS: --max-old-space-size=8192
+      DOCUSAURUS_SSR_CONCURRENCY: 5
+
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@17d0e2bd7d51742c71671bd19fa12bdc9d40a3d6 # v2.8.1
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+
+      - name: use node.js 18.x
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org/ # Needed for auth
+
+      # We avoid caching in this workflow, as we're running an install of both the top-level
+      # dependencies and the mikespiegel. We leave it to the main master workflow to produce the
+      # cache, as that results in a smaller bundle.
+      - name: top-level yarn install
+        run: yarn install --immutable
+      - name: mikespiegel yarn install
+        run: yarn install --immutable
+        working-directory: mikespiegel
+      - name: storybook yarn install
+        run: yarn install --immutable
+        working-directory: storybook
+
+      - name: build API reference
+        run: yarn build:api-docs
+
+      - name: build mikespiegel
+        run: yarn build
+        working-directory: mikespiegel
+
+      - name: build storybook
+        run: yarn build-storybook
+        working-directory: storybook
+
+      - name: move storybook dist into mikespiegel
+        run: mv storybook/dist/ mikespiegel/build/storybook
+
+      - name: Check the build output
+        run: ls mikespiegel/build && ls mikespiegel/build/storybook
+
+      - name: Deploy both mikespiegel and storybook to gh-pages
+        uses: JamesIves/github-pages-deploy-action@5c6e9e9f3672ce8fd37b9856193d2a537941e66c # v4.6.1
+        with:
+          branch: gh-pages
+          folder: mikespiegel/build
