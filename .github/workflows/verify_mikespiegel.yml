@@ -1,27 +1,19 @@
-name: mikespiegel
+name: mikepspiegel
 on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
+  pull_request:
 
 permissions:
   contents: read
 
 jobs:
-  deploy-mikespiegel:
-    permissions:
-      contents: write # for JamesIves/github-pages-deploy-action to push changes in repo
+  build-mikespiegel:
     runs-on: ubuntu-latest
 
     env:
       CI: true
       NODE_OPTIONS: --max-old-space-size=8192
       DOCUSAURUS_SSR_CONCURRENCY: 5
-
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
+      
 
     steps:
       - name: Harden Runner
@@ -41,12 +33,3 @@ jobs:
 
       - name: build mikespiegel
         run: npm run build
-
-      - name: Check the build output
-        run: ls build
-
-      - name: Deploy both mikespiegel to github-pages
-        uses: JamesIves/github-pages-deploy-action@v4.6.1 # v4.6.1
-        with:
-          branch: gh-pages
-          folder: build
