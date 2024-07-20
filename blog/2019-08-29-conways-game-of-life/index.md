@@ -1,7 +1,7 @@
 ---
 title: "Conway's game of life"
 date: "2019-08-29"
-author: "Mike"
+authors: mike
 path: "/conway"
 # coverImage: "../../images/conway.gif" #this won't work without tweaking how graphql embeds images
 ---
